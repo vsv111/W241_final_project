@@ -110,8 +110,6 @@ merged[!is.na(merged$Last.Gift.Date),]$donated_TY_pre_treatment <- as.Date(merge
 merged$donated_TY_pre_treatment <- ifelse(merged$donated_TY_pre_treatment>as.Date("2017-12-31") & merged$donated_TY_pre_treatment<as.Date("2017-07-25") ,1,0)
 print("Number of donations this year pre-treatment: ")
 print(sum(merged$donated_TY_pre_treatment))
-
-      
 ```
 
 Let us create dependant and covariates
@@ -291,6 +289,7 @@ Regression for effect of original resposne
 just_msg_effect_immediate<-lm(donated_after_orig_email~Split.Name, data=merged)
 print("Original treatment effect on immediate response:")
 print(summary(just_msg_effect_immediate))
+
 
 ```
 
